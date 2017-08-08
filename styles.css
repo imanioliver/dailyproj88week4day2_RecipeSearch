@@ -15,15 +15,17 @@ body {
 
 .rowContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 60px;
+    width: 100%;
 }
 
 .input {
     height: 30px;
 }
 
-.firstRow {
+/*.firstRow {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -35,13 +37,21 @@ body {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-}
+}*/
 
 .box {
+    display: flex;
+    flex-direction: row;
     border-style: solid;
     border-color: black;
     border-width: thin;
     width: 200px;
     height: 200px;
     margin: 1%;
+    width: 20%;
+}
+
+
+.notFound {
+    width:100%;
 }

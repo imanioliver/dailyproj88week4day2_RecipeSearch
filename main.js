@@ -1,14 +1,4 @@
 let rowContainer = document.querySelector('.rowContainer');
-// let container= document.querySelector('.container');
-// let boxTwo = document.getElementById('itemTwo');
-// let boxThree = document.getElementById('itemThree');
-// let boxFour = document.getElementById('itemFour');
-// let boxFive = document.getElementById('itemFive');
-// let boxSix = document.getElementById('itemSix');
-// let boxSeven = document.getElementById('itemSeven');
-// let boxEight = document.getElementById('itemEight');
-//
-
 let searchForm = document.querySelector('.searchForm');
 
 searchForm.addEventListener('submit', function(event){
@@ -16,7 +6,8 @@ searchForm.addEventListener('submit', function(event){
     event.preventDefault();
     let query = document.getElementsByTagName('input');
 
-    fetch("https://recipepuppyproxy.herokuapp.com/api/?i=onions,garlic&q="+ query[0].value)
+    rowContainer.innerHTML = '';
+    fetch("https://recipepuppyproxy.herokuapp.com/api/?q="+ query[0].value)
         .then(function(response) {
             query[0].value = '';
 
@@ -42,7 +33,10 @@ searchForm.addEventListener('submit', function(event){
 
                     rowContainer.appendChild(box);
 
+                }
 
+                if (data.results.length === 0){
+                    rowContainer.innerHTML += `<h3>Oops! We couldn't find any results that matched your search! Please try searching for another recipe ingredient! 🍽️😋 🍲</h3>`;
                 }
 
 
@@ -52,8 +46,6 @@ searchForm.addEventListener('submit', function(event){
         })
         .catch(function(err) {
             console.log("Fetch Error :-S", err);
-
-            // boxOne.innerHTML+= `<p>${foodData.results[0].title}</p>`
         });
 
 

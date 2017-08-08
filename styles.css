@@ -1,16 +1,47 @@
 body {
     background-color: white;
+    background-color: #ffffff;
+    margin: 8%;
 }
 
 
-.header{
+/*.container{
+    display: flex;
+}*/
 
+.header {
+    padding-bottom: 60px;
 }
 
-.firstRow{
-
+.rowContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
 }
 
-.secondRow{
+.input {
+    height: 30px;
+}
 
+.firstRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.secondRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.box {
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+    width: 200px;
+    height: 200px;
+    margin: 1%;
 }

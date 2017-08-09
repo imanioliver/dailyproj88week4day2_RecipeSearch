@@ -24,9 +24,9 @@ searchForm.addEventListener('submit', function(event){
                     box.classList.add('box');
 
 
-                    box.innerHTML+=`<div> ${data.results[i].title}</div>`
+                    box.innerHTML+=`<div class="title">  ${data.results[i].title}</div>`
                     if (data.results[i].thumbnail === ''){
-                        box.innerHTML += `<a href='${data.results[i].href}'><img class="notFound" src=${"http://www.kickoff.com/chops/images/resized/large/no-image-found.jpg"}> </a>`
+                        box.innerHTML += `<a href='${data.results[i].href}'><img class="notFound" src=${"https://s-media-cache-ak0.pinimg.com/736x/dc/53/86/dc53862c63530d8fc5f483ee853a75ae--page-design-design-web.jpg"}> </a>`
                     } else {
                         box.innerHTML+=`<a href='${data.results[i].href}'><img  src='${data.results[i].thumbnail}'> </a>`
                     }
